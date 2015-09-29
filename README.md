@@ -45,7 +45,7 @@ d) Add crack detection code to Matlab path (change to current directory first):
  >> addpath(pwd); savepath;
 
 e) Finally, optionally download the crack image dataset (necessary for training/evaluation):
-TBA.
+https://github.com/cuilimeng/CrackForest-dataset
 
 f) A fully trained crack model for RGB images is available as part of this release.
 
