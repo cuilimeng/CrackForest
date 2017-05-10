@@ -13,7 +13,25 @@ Part of the Matlab code is supported on Piotr Dollar’s Structured Edge Detecti
 
 If you use the Structured Edge Detection Toolbox, we appreciate it if you cite an appropriate subset of the following papers:
 
-TBA.
+@article{shi2016automatic,<br />
+&nbsp;&nbsp;title={Automatic road crack detection using random structured forests},<br />
+&nbsp;&nbsp;author={Shi, Yong and Cui, Limeng and Qi, Zhiquan and Meng, Fan and Chen, Zhensong},<br />
+&nbsp;&nbsp;journal={IEEE Transactions on Intelligent Transportation Systems},<br />
+&nbsp;&nbsp;volume={17},<br />
+&nbsp;&nbsp;number={12},<br />
+&nbsp;&nbsp;pages={3434--3445},<br />
+&nbsp;&nbsp;year={2016},<br />
+&nbsp;&nbsp;publisher={IEEE}<br />
+}
+
+@inproceedings{cui2015pavement,<br />
+&nbsp;&nbsp;title={Pavement Distress Detection Using Random Decision Forests},<br />
+&nbsp;&nbsp;author={Cui, Limeng and Qi, Zhiquan and Chen, Zhensong and Meng, Fan and Shi, Yong},<br />
+&nbsp;&nbsp;booktitle={International Conference on Data Science},<br />
+&nbsp;&nbsp;pages={95--102},<br />
+&nbsp;&nbsp;year={2015},<br />
+&nbsp;&nbsp;organization={Springer}<br />
+}
 
 ###################################################################
 
@@ -29,25 +47,25 @@ a) This code is written for the Matlab interpreter (tested with versions R2014b)
 
 b) Additionally, Piotr’s Computer Vision Toolbox (version 3.26 or later) is also required. It can be downloaded at:
 
- http://vision.ucsd.edu/~pdollar/toolbox/doc/index.html.
+&nbsp;https://pdollar.github.io/toolbox/.
 
 c) Next, please compile mex code from within Matlab (note: win64/linux64 binaries included):
 
-  mex private/edgesDetectMex.cpp -outdir private [OMPPARAMS]
+&nbsp;&nbsp;mex private/edgesDetectMex.cpp -outdir private [OMPPARAMS]
   
-  mex private/edgesNmsMex.cpp    -outdir private [OMPPARAMS]
+&nbsp;&nbsp;mex private/edgesNmsMex.cpp    -outdir private [OMPPARAMS]
   
-  mex private/spDetectMex.cpp    -outdir private [OMPPARAMS]
+&nbsp;&nbsp;mex private/spDetectMex.cpp    -outdir private [OMPPARAMS]
   
-  mex private/edgeBoxesMex.cpp   -outdir private
+&nbsp;&nbsp;mex private/edgeBoxesMex.cpp   -outdir private
 
 Here [OMPPARAMS] are parameters for OpenMP and are OS and compiler dependent.
 
-  Windows:  [OMPPARAMS] = '-DUSEOMP' 'OPTIMFLAGS="$OPTIMFLAGS' '/openmp"'
+&nbsp;&nbsp;Windows:  [OMPPARAMS] = '-DUSEOMP' 'OPTIMFLAGS="$OPTIMFLAGS' '/openmp"'
 
-  Linux V1: [OMPPARAMS] = '-DUSEOMP' CFLAGS="\$CFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp"
+&nbsp;&nbsp;Linux V1: [OMPPARAMS] = '-DUSEOMP' CFLAGS="\$CFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp"
 
-  Linux V2: [OMPPARAMS] = '-DUSEOMP' CXXFLAGS="\$CXXFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp"
+&nbsp;&nbsp;Linux V2: [OMPPARAMS] = '-DUSEOMP' CXXFLAGS="\$CXXFLAGS -fopenmp" LDFLAGS="\$LDFLAGS -fopenmp"
 
 To compile without OpenMP simply omit [OMPPARAMS]; note that code will be single threaded in this case.
 
@@ -57,7 +75,7 @@ d) Add crack detection code to Matlab path (change to current directory first):
 
 e) Finally, optionally download the crack image dataset (necessary for training/evaluation):
 
-https://github.com/cuilimeng/CrackForest-dataset
+&nbsp;https://github.com/cuilimeng/CrackForest-dataset
 
 f) A fully trained crack model for RGB images is available as part of this release.
 
